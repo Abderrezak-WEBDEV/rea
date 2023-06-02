@@ -8,8 +8,8 @@ const Navba = ({filterSearch}) => {
   // je vais utiliser le setState qui prend un string vide comme parametre 
   const [searchValue, setSearchValue] = useState(''); 
 
-  const onSearch = (e) => {
-    e.preventDefault();
+  const onSearch = () => {
+    
     filterSearch(searchValue)
   }
     return (

@@ -1,7 +1,11 @@
 .App {
   text-align: center;
   height: 200vh;
-  background-image: url("./assets/petit-dejeuner.png");
+  background-image: url("./assets/resto.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+
  
 }
 

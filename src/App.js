@@ -32,7 +32,8 @@ const App = ()=> {
     //si l'utilisateur n'a pas mit de mot dans l'input
     if(word !== "")  
     {
-     
+      const newArry3 = ["Menu",...new Set(items.map((i)=> i.title))]
+      console.log(newArry3)
       const newArry = items.filter((item)=>item.title === word)
       setItemData(newArry)
     }
