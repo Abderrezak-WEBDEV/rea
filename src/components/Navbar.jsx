@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Row } from 'react-bootstrap';
 import {Navbar, Nav, Button, Container, Form} from 'react-bootstrap'
-const Navba = () => {
+
+const Navba = ({filterSearch}) => {
+
+  // je vais une fonction de recherche en fonction du mot integrer dans l'input, il sera le parametre de ma fonction
+  // je vais utiliser le setState qui prend un string vide comme parametre 
+  const [searchValue, setSearchValue] = useState(''); 
+
+  const onSearch = (e) => {
+    e.preventDefault();
+    filterSearch(searchValue)
+  }
     return (
         <Row>
              <Navbar bg="dark" expand="lg" variant='dark'>
@@ -15,14 +25,16 @@ const Navba = () => {
             navbarScroll
           >
           </Nav>
+          
           <Form className="d-flex">
             <Form.Control
               type="text"
               placeholder=""
               className="mx-2"
-             
+              onChange= {(e)=> setSearchValue(e.target.value)}
+              value = {searchValue}
             />
-            <Button variant="outline-primary" className='btn-search'>Recherche</Button>
+            <Button  onClick={()=>onSearch()} variant="outline-primary" className='btn-search'>Recherche</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

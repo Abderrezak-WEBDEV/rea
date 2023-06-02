@@ -25,7 +25,7 @@ const Cards= ({donnees})=> {
                 </Card>
             </Col>
             )
-        })): <h1 className='text-center'>votre tableau de données est vide</h1> 
+        })): <h1 className='text-center'>Objet introuvable!!!</h1> 
         
        }
         
